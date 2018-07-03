@@ -1,9 +1,6 @@
 #include <iostream>
 #include <string.h>
-
-int my_strcmp(const char *s1, const char *s2);
-char *my_strcat(char *s1, const char *s2);
-char *my_strcpy(char *s1, const char *s2);
+#include "my_string.h"
 
 int main (void) {
   // strcmp
@@ -40,47 +37,4 @@ int main (void) {
   std::cout << scpy1 << " " << scpy2 << std::endl;
   
   return 0;
-}
-
-int my_strcmp(const char *s1, const char *s2) {
-  while (1) {
-    if (*s1 > *s2) {
-      return 1;
-    }
-    else if (*s1 < *s2) {
-      return -1;
-    } else {
-      if (*s1 == '\0') {
-        return 0;
-      }
-    }
-    s1++;
-    s2++;
-  }
-}
-
-char *my_strcat(char *s1, const char *s2) {
-  char *s1_sta = s1;
-  while (*s1 != '\0') {
-    s1++;
-  }
-
-  while (*s2 != '\0') {
-    *s1 = *s2;
-    *s1++;
-    *s2++;
-  }
-
-  return s1_sta;
-}
-
-char *my_strcpy(char *s1, const char *s2) {
-  char *s1_sta = s1;
-  while (*s2 != '\0') {
-    *s1 = *s2;
-    s1++;
-    s2++;
-  }
-
-  return s1_sta;
 }
